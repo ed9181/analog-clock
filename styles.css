@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fenix', serif;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, #242838, #000000);
+}
+
+.container {
+    position: relative;
+}
+
+.container .clock-circle {
+    position: absolute;
+    pointer-events: none;
+    animation: 2s ease-in infinite alternate;
+}
+
+.clock{
+    width: 350px;
+}
+
+.container {
+    position: relative;
+    flex-direction: column;
+}
+
+.container .clock-circle {
+    position: absolute;
+    pointer-events: none;
+    animation: 3s ease-in infinite alternate;
+}
+
+.container .clock-circle:nth-child(1) {
+    border-radius: 60%;
+    width: 125px;
+    height: 125px;
+    top: -35px;
+    left: -50px;
+    background: linear-gradient(140deg, #070505 15%,#500316 78%);
+    box-shadow: -8px -8px 45px 20px rgba(47, 8, 63, 0.3);
+    animation-name: up;
+}
+
+@keyframes up {
+    to {
+        transform: translateY(-25px);
+    }
+}
+
+.container .clock-circle:nth-child(2) {
+    border-radius: 60%;
+    width: 200px;
+    height: 200px;
+    top: 250px;
+    left: 200px;
+    background: linear-gradient(160deg, #90303D 25%,#ED8240 78%);
+    box-shadow: 8px 8px 45px 10px rgba(144, 48, 61, 0.3);
+    animation-name: down;
+}
+
+@keyframes down {
+    to {
+        transform: translateY(20px);
+    }
+}
+
+.clock {
+    box-sizing: border-box;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(251, 37, 118, 0.2);
+    border-radius: 50%;
+    /* background-image: url(img/purple-orange-galaxy.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 35px rgba(21, 0,80, .9);
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(140deg, #11052C 30%,#90303D 65%);
+    box-shadow: 5px 5px 25px 5px rgba(124,32,58,.6);
+    border-radius: 60%;
+    z-index: 15;
+    pointer-events: none;
+    animation: rotation 10s linear infinite;
+    animation-name: rotation;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.clock .hour,
+.clock .minute,
+.clock .second{
+    position: absolute;
+}
+
+.clock .hour,
+.clock .hour .hr {
+    width: 160px;
+    height: 160px;
+}
+
+.clock .minute,
+.clock .minute .min {
+    width: 190px;
+    height: 190px;
+}
+
+.clock .second,
+.clock .second .sec {
+    width: 230px;
+    height: 230px;
+}
+
+.clock .hour .hr
+.clock .minute .min
+.clock .second .sec {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 60%;
+}
+
+.clock .hour .hr::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: 76px;
+    width: 5px;
+    height: 50%;
+    background: #FC3A52;
+    box-shadow: 4px 4px 15px 5px rgba(252,58,82,.3);
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.clock .minute .min::before {
+    content: '';
+    position: absolute;
+    top: -20px; left: 93px;
+    width: 3px;
+    height: 60%;
+    background: #F9B248;
+    box-shadow: 4px 4px 15px 5px rgba(249,178,72,.9);
+    z-index: 11;
+    border-radius: 10px;
+}
+
+.clock .second .sec::before {
+    content: '';
+    position: absolute;
+    top: -30px; left: 114px;
+    width: 1px;
+    height: 65%;
+    background: #FF0066;
+    box-shadow: 4px 4px 15px 5px rgba(251, 37, 118, 0.4);
+    z-index: 12;
+    border-radius: 10px;
+}
